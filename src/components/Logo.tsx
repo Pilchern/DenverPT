@@ -7,7 +7,7 @@ export function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
 
   return (
     <div
-      className={`${dims.box} shrink-0 rounded-full border border-gold flex items-center justify-center`}
+      className={`${dims.box} shrink-0 rounded-full border border-gold flex items-center justify-center shadow-[0_0_18px_-2px_rgba(201,166,104,0.55)]`}
     >
       <span className={`font-heading font-bold text-cream ${dims.text}`}>
         DF

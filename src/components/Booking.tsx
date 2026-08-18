@@ -1,12 +1,13 @@
 import { siteConfig } from "@/lib/site-config";
 import { InstagramIcon, PhoneIcon } from "./icons";
+import { Reveal } from "./Reveal";
 
 export function Booking() {
   const hasCalendly = Boolean(siteConfig.calendlyUrl);
 
   return (
     <section id="booking" className="bg-navy-light/40 px-6 py-24">
-      <div className="mx-auto max-w-3xl text-center">
+      <Reveal className="mx-auto max-w-3xl text-center">
         <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
           BOOK
         </p>
@@ -17,9 +18,9 @@ export function Booking() {
           Pick a time that works for you and let&apos;s talk about your
           goals.
         </p>
-      </div>
+      </Reveal>
 
-      <div className="mx-auto mt-12 max-w-3xl">
+      <Reveal delay={120} className="mx-auto mt-12 max-w-3xl">
         {hasCalendly ? (
           <iframe
             src={siteConfig.calendlyUrl}
@@ -54,7 +55,7 @@ export function Booking() {
             </div>
           </div>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

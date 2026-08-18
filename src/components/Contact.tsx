@@ -1,12 +1,13 @@
 import { siteConfig } from "@/lib/site-config";
 import { InstagramIcon, PhoneIcon } from "./icons";
 import { ContactForm } from "./ContactForm";
+import { Reveal } from "./Reveal";
 
 export function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1fr_1.2fr]">
-        <div>
+        <Reveal>
           <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
             CONTACT
           </p>
@@ -36,9 +37,11 @@ export function Contact() {
               {siteConfig.instagramHandle}
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <ContactForm />
+        <Reveal delay={120}>
+          <ContactForm />
+        </Reveal>
       </div>
     </section>
   );

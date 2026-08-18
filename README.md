@@ -57,6 +57,10 @@ Everything editor-friendly lives in a few files:
 | Pricing & package details | `src/components/Services.tsx` |
 | Testimonials | `src/components/Testimonials.tsx` |
 
+The About section currently shows a styled placeholder in place of a photo.
+To add a real one, drop an image in `public/` and swap the placeholder
+`<div>` in `src/components/About.tsx` for an `<Image>` from `next/image`.
+
 Pricing and testimonials are currently **placeholders** — update them with
 Denver's real rates and, once he has some, real client quotes.
 

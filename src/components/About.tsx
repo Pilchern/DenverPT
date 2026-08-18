@@ -1,4 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
+import { DumbbellIcon } from "./icons";
+import { Reveal } from "./Reveal";
 
 const credentials = [
   { label: siteConfig.credential, sub: "National Academy of Sports Medicine" },
@@ -8,19 +10,27 @@ const credentials = [
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:items-start">
-        <div>
-          <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
-            ABOUT
-          </p>
-          <h2 className="font-heading mt-3 text-3xl font-bold uppercase text-cream sm:text-4xl">
-            Meet Denver
-          </h2>
+      <div className="grid gap-14 md:grid-cols-[0.9fr_1.3fr] md:items-start">
+        <Reveal>
+          {/*
+            Portrait placeholder — swap for a real photo of Denver once he
+            has one. See README.md for how/where to add it.
+          */}
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-sm border border-gold/30 bg-gradient-to-br from-navy-light via-navy to-navy-deep">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <DumbbellIcon className="h-8 w-28 -rotate-12 text-gold/25" />
+            </div>
+            <div className="absolute inset-0 border border-gold/10 m-3" />
+          </div>
+
           <div className="mt-8 space-y-4">
             {credentials.map((c) => (
               <div
                 key={c.label}
-                className="rounded-sm border border-gold/30 bg-navy-light px-5 py-4"
+                className="card-hover rounded-sm border border-gold/30 bg-navy-light px-5 py-4"
               >
                 <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
                   {c.label.toUpperCase()}
@@ -29,34 +39,44 @@ export function About() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="space-y-5 text-cream/90">
-          {/*
-            Placeholder bio copy — swap this in for Denver's own words about
-            his background, why he got into training, and who he loves to
-            work with. See README.md for editing instructions.
-          */}
-          <p>
-            Denver Frahm is a NASM Certified Personal Trainer specializing in
-            strength &amp; conditioning, built on a foundation of KSP
-            Strength &amp; Conditioning training. He works with clients of
-            every level — from people just starting their fitness journey to
-            athletes chasing a specific performance goal.
+        <Reveal delay={120}>
+          <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
+            ABOUT
           </p>
-          <p>
-            His approach is simple: build real strength, move well, and stay
-            consistent. Every program is tailored to the individual, whether
-            you&apos;re training in person around {siteConfig.location} or
-            working together online from anywhere.
-          </p>
-          <p>
-            Whether the goal is building muscle, losing fat, improving
-            athletic performance, or just feeling stronger day to day, Denver
-            brings a personalized plan and hands-on coaching to get you
-            there.
-          </p>
-        </div>
+          <h2 className="font-heading mt-3 text-3xl font-bold uppercase text-cream sm:text-4xl">
+            Meet Denver
+          </h2>
+
+          <div className="mt-8 space-y-5 text-cream/90">
+            {/*
+              Placeholder bio copy — swap this in for Denver's own words
+              about his background, why he got into training, and who he
+              loves to work with. See README.md for editing instructions.
+            */}
+            <p>
+              Denver Frahm is a NASM Certified Personal Trainer specializing
+              in strength &amp; conditioning, built on a foundation of KSP
+              Strength &amp; Conditioning training. He works with clients of
+              every level — from people just starting their fitness journey
+              to athletes chasing a specific performance goal.
+            </p>
+            <p>
+              His approach is simple: build real strength, move well, and
+              stay consistent. Every program is tailored to the individual,
+              whether you&apos;re training in person around{" "}
+              {siteConfig.location} or working together online from
+              anywhere.
+            </p>
+            <p>
+              Whether the goal is building muscle, losing fat, improving
+              athletic performance, or just feeling stronger day to day,
+              Denver brings a personalized plan and hands-on coaching to get
+              you there.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

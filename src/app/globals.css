@@ -2,18 +2,22 @@
 
 :root {
   --color-navy: #0f1c2e;
+  --color-navy-deep: #0a1420;
   --color-navy-light: #16283f;
   --color-gold: #c9a668;
   --color-gold-soft: #d9c193;
+  --color-gold-bright: #e4c98a;
   --color-cream: #f3ede2;
   --color-slate: #8493a8;
 }
 
 @theme inline {
   --color-navy: var(--color-navy);
+  --color-navy-deep: var(--color-navy-deep);
   --color-navy-light: var(--color-navy-light);
   --color-gold: var(--color-gold);
   --color-gold-soft: var(--color-gold-soft);
+  --color-gold-bright: var(--color-gold-bright);
   --color-cream: var(--color-cream);
   --color-slate: var(--color-slate);
   --font-heading: var(--font-heading);
@@ -22,6 +26,23 @@
 
 body {
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(201, 166, 104, 0.16), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 15%, rgba(201, 166, 104, 0.08), transparent 55%),
+    linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  position: relative;
+}
+
+/* Faint film-grain texture so flat panels read as material, not a color swatch. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
 .font-heading {
@@ -30,4 +51,43 @@ body {
 
 .tracking-wide-plus {
   letter-spacing: 0.12em;
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(201, 166, 104, 0.35);
+}
+
+.card-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 166, 104, 0.55);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 166, 104, 0.08);
+}
+
+/* Scroll-reveal states, toggled by the Reveal component. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -51,6 +51,57 @@ export function PhoneIcon({ className = "" }: { className?: string }) {
   );
 }
 
+export function TargetIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function MapPinIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 21s7-6.1 7-11.5C19 5.9 15.9 3 12 3S5 5.9 5 9.5C5 14.9 12 21 12 21Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+export function LaptopIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="4" y="5" width="16" height="10.5" rx="1.2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M2.5 19h19" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function CheckIcon({ className = "" }: { className?: string }) {
   return (
     <svg
