@@ -4,6 +4,11 @@ import { Reveal } from "./Reveal";
 
 const credentials = [
   { label: siteConfig.credential, sub: "National Academy of Sports Medicine" },
+  {
+    label: siteConfig.nutritionCredential,
+    sub: siteConfig.nutritionStatus,
+    pending: true,
+  },
   { label: siteConfig.school, sub: `Grad ${siteConfig.gradYear}` },
 ];
 
@@ -30,11 +35,20 @@ export function About() {
             {credentials.map((c) => (
               <div
                 key={c.label}
-                className="card-hover rounded-sm border border-gold/30 bg-navy-light px-5 py-4"
+                className={`card-hover rounded-sm border bg-navy-light px-5 py-4 ${
+                  c.pending ? "border-gold/15 border-dashed" : "border-gold/30"
+                }`}
               >
-                <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
-                  {c.label.toUpperCase()}
-                </p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
+                    {c.label.toUpperCase()}
+                  </p>
+                  {c.pending && (
+                    <span className="font-heading shrink-0 rounded-full border border-gold/40 px-2 py-0.5 text-[10px] font-semibold tracking-wide-plus text-gold/80">
+                      SOON
+                    </span>
+                  )}
+                </div>
                 <p className="mt-1 text-sm text-slate">{c.sub}</p>
               </div>
             ))}
@@ -67,7 +81,9 @@ export function About() {
               stay consistent. Every program is tailored to the individual,
               whether you&apos;re training in person around{" "}
               {siteConfig.location} or working together online from
-              anywhere.
+              anywhere. He&apos;s also finishing his {siteConfig.nutritionCredential}{" "}
+              certification, so nutrition coaching is coming soon alongside
+              training.
             </p>
             <p>
               Whether the goal is building muscle, losing fat, improving

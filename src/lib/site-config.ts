@@ -10,6 +10,11 @@ export const siteConfig = {
   location: "Kenosha & Trevor, WI",
   school: "KSP Strength & Conditioning",
   gradYear: "Spring 2027",
+  // Nutrition certification bundled with his NASM course — in progress as of
+  // launch. Update the label (and anything that says "in progress") once he
+  // finishes and gets his certificate.
+  nutritionCredential: "Nutrition Coach",
+  nutritionStatus: "Certification in progress",
   // Optional: add a public contact email here once Denver has one he wants
   // listed. Leave blank to hide the email link.
   email: "",
