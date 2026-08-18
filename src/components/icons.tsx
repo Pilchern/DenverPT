@@ -51,6 +51,25 @@ export function PhoneIcon({ className = "" }: { className?: string }) {
   );
 }
 
+export function MessageIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M4 5.5h16v10.5H9.5L5 20v-4H4V5.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function TargetIcon({ className = "" }: { className?: string }) {
   return (
     <svg

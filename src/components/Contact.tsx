@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
-import { InstagramIcon, PhoneIcon } from "./icons";
+import { InstagramIcon, MessageIcon, PhoneIcon } from "./icons";
 import { ContactForm } from "./ContactForm";
 import { Reveal } from "./Reveal";
 
@@ -20,13 +20,24 @@ export function Contact() {
           </p>
 
           <div className="mt-8 space-y-4">
-            <a
-              href={siteConfig.phoneHref}
-              className="flex items-center gap-3 text-cream transition-colors hover:text-gold"
-            >
-              <PhoneIcon className="h-5 w-5 text-gold" />
-              {siteConfig.phone}
-            </a>
+            <div className="flex items-center gap-3 text-cream">
+              <PhoneIcon className="h-5 w-5 shrink-0 text-gold" />
+              <span>{siteConfig.phone}</span>
+              <span className="text-slate">&middot;</span>
+              <a
+                href={siteConfig.phoneHref}
+                className="transition-colors hover:text-gold"
+              >
+                Call
+              </a>
+              <a
+                href={siteConfig.smsHref}
+                className="flex items-center gap-1 transition-colors hover:text-gold"
+              >
+                <MessageIcon className="h-3.5 w-3.5" />
+                Text
+              </a>
+            </div>
             <a
               href={siteConfig.instagramUrl}
               target="_blank"

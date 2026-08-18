@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
-import { InstagramIcon, PhoneIcon } from "./icons";
+import { InstagramIcon, MessageIcon, PhoneIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
 export function Booking() {
@@ -35,13 +35,21 @@ export function Booking() {
               directly and Denver will get back to you to schedule your free
               consult.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <p className="mt-1 text-sm text-slate">{siteConfig.phone}</p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href={siteConfig.phoneHref}
                 className="font-heading inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-3 text-sm font-semibold tracking-wide-plus text-navy transition-transform hover:scale-[1.03]"
               >
                 <PhoneIcon className="h-4 w-4" />
-                CALL OR TEXT {siteConfig.phone}
+                CALL
+              </a>
+              <a
+                href={siteConfig.smsHref}
+                className="font-heading inline-flex items-center gap-2 rounded-sm border border-cream/30 px-6 py-3 text-sm font-semibold tracking-wide-plus text-cream transition-colors hover:border-gold hover:text-gold"
+              >
+                <MessageIcon className="h-4 w-4" />
+                TEXT
               </a>
               <a
                 href={siteConfig.instagramUrl}

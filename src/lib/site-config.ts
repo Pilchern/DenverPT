@@ -9,6 +9,9 @@ export const siteConfig = {
   focus: "Strength & Conditioning",
   phone: "262-321-8806",
   phoneHref: "tel:+12623218806",
+  // A tel: link only ever offers "Call" — it can't also offer texting, so
+  // anywhere the copy says "call or text" needs this separate sms: link.
+  smsHref: "sms:+12623218806",
   instagramHandle: "@DenverSkyco",
   instagramUrl: "https://instagram.com/DenverSkyco",
   location: "Kenosha & Trevor, WI",
