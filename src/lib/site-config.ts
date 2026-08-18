@@ -1,3 +1,7 @@
+// Update if a custom domain gets attached in Vercel — used for canonical
+// URLs, Open Graph tags, and structured data.
+export const siteUrl = "https://denver-frahm-training.vercel.app";
+
 export const siteConfig = {
   name: "Denver Frahm",
   credential: "NASM-CPT",

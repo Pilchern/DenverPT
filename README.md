@@ -6,13 +6,32 @@ cards.
 
 ## What's on the site
 
-- Hero, About/Bio, Services & Pricing, Testimonials, Booking, and Contact
-  sections, all on one scrolling page.
+- Hero, credibility stats, "Who I Train," About/Bio, Services, "How It
+  Works," Testimonials, FAQ, Booking, and Contact — all on one scrolling
+  page.
 - A booking section that embeds a Calendly (or Cal.com) calendar once it's
   configured — until then it shows a "call/text/DM" fallback.
 - A contact form that emails Denver directly via [Web3Forms](https://web3forms.com)
   (free, no backend server needed) — until it's configured it shows a
   fallback message and still displays his phone/Instagram.
+- Local SEO basics: title/description built around "Personal Trainer in
+  Kenosha & Trevor, WI," a `robots.txt` + sitemap, a branded favicon and
+  Open Graph image generated at build time, and JSON-LD structured data
+  (ProfessionalService + FAQPage) so search engines understand the business.
+
+## A rule this codebase follows: never invent facts
+
+Services intentionally has **no dollar amounts** — Denver's real rates
+aren't in the codebase, so the packages describe what's included and send
+people to the free consult instead of showing a made-up number. Same with
+Testimonials: the array is empty on purpose (see
+`src/components/Testimonials.tsx`) and shows an honest "just getting
+started" message instead of fake client quotes. Both are designed to
+flip over automatically once real content exists — add a price/unit to a
+package in `src/components/Services.tsx`, or a quote to the `testimonials`
+array in `src/components/Testimonials.tsx`, and the placeholder state goes
+away on its own. Please don't fill either with invented numbers or quotes —
+it's a real liability for a business site, not just a style issue.
 
 ## Two things to set up before sending this to real clients
 
@@ -52,17 +71,21 @@ Everything editor-friendly lives in a few files:
 
 | What to change | File |
 | --- | --- |
-| Phone, Instagram, location, credentials | `src/lib/site-config.ts` |
+| Phone, Instagram, location, credentials, site URL | `src/lib/site-config.ts` |
 | Bio / about text | `src/components/About.tsx` |
-| Pricing & package details | `src/components/Services.tsx` |
-| Testimonials | `src/components/Testimonials.tsx` |
+| Package details (see note above on pricing) | `src/components/Services.tsx` |
+| Testimonials (empty by design — see note above) | `src/components/Testimonials.tsx` |
+| Who Denver trains | `src/components/WhoITrain.tsx` |
+| The 3-step process | `src/components/HowItWorks.tsx` |
+| FAQ questions/answers | `src/components/FAQ.tsx` (also feeds the FAQPage schema in `src/app/page.tsx`) |
 
 The About section currently shows a styled placeholder in place of a photo.
 To add a real one, drop an image in `public/` and swap the placeholder
 `<div>` in `src/components/About.tsx` for an `<Image>` from `next/image`.
 
-Pricing and testimonials are currently **placeholders** — update them with
-Denver's real rates and, once he has some, real client quotes.
+If a custom domain gets attached in Vercel, update `siteUrl` in
+`src/lib/site-config.ts` — it feeds the canonical URL, Open Graph tags, and
+structured data.
 
 ## Running locally
 

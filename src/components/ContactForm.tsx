@@ -55,34 +55,58 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="contact-name" className="sr-only">
+            Name
+          </label>
+          <input
+            id="contact-name"
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+          />
+        </div>
+        <div>
+          <label htmlFor="contact-email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="contact-phone" className="sr-only">
+          Phone (optional)
+        </label>
         <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-          className="rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          className="rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+          id="contact-phone"
+          type="tel"
+          name="phone"
+          placeholder="Phone (optional)"
+          className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
         />
       </div>
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone (optional)"
-        className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
-      />
-      <textarea
-        name="message"
-        placeholder="Tell Denver about your goals"
-        rows={4}
-        required
-        className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
-      />
+      <div>
+        <label htmlFor="contact-message" className="sr-only">
+          Message
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          placeholder="Tell Denver about your goals"
+          rows={4}
+          required
+          className="w-full rounded-sm border border-gold/30 bg-navy-light px-4 py-3 text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+        />
+      </div>
       <input type="hidden" name="subject" value="New inquiry from denverfrahm.com" />
       <button
         type="submit"
