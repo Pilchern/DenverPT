@@ -21,17 +21,20 @@ cards.
 
 ## A rule this codebase follows: never invent facts
 
-Services intentionally has **no dollar amounts** — Denver's real rates
-aren't in the codebase, so the packages describe what's included and send
-people to the free consult instead of showing a made-up number. Same with
-Testimonials: the array is empty on purpose (see
+Services shows **$55/session** and **$150/month** — deliberate starting
+rates picked to match what a new independent trainer in a smaller Midwest
+market typically charges, not numbers Denver confirmed himself. They're a
+reasonable place to start, not gospel — he should raise them once he has a
+full roster, or adjust now if they're off. Change them in
+`src/components/Services.tsx` (just the `price`/`unit` fields).
+
+Testimonials is a different situation: the array is empty on purpose (see
 `src/components/Testimonials.tsx`) and shows an honest "just getting
-started" message instead of fake client quotes. Both are designed to
-flip over automatically once real content exists — add a price/unit to a
-package in `src/components/Services.tsx`, or a quote to the `testimonials`
-array in `src/components/Testimonials.tsx`, and the placeholder state goes
-away on its own. Please don't fill either with invented numbers or quotes —
-it's a real liability for a business site, not just a style issue.
+started" message instead of fake client quotes, because there's no way to
+responsibly invent someone's words. It flips to a real quote grid
+automatically once entries get added to the `testimonials` array — please
+don't fill it with invented quotes, that's a real liability for a business
+site, not just a style issue.
 
 ## Two things to set up before sending this to real clients
 

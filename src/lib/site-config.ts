@@ -15,7 +15,10 @@ export const siteConfig = {
   instagramHandle: "@DenverSkyco",
   instagramUrl: "https://instagram.com/DenverSkyco",
   location: "Kenosha & Trevor, WI",
-  school: "KSP Strength & Conditioning",
+  // "KSP" on his business card is shorthand for this degree, not a program
+  // name — he's still finishing it (see gradYear), not holding it yet.
+  school: "B.S. Kinesiology & Sport Performance",
+  university: "UW-Parkside",
   gradYear: "Spring 2027",
   // Nutrition certification bundled with his NASM course — in progress as of
   // launch. Update the label (and anything that says "in progress") once he

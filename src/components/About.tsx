@@ -9,7 +9,11 @@ const credentials = [
     sub: siteConfig.nutritionStatus,
     pending: true,
   },
-  { label: siteConfig.school, sub: `Grad ${siteConfig.gradYear}` },
+  {
+    label: siteConfig.school,
+    sub: `${siteConfig.university} · Grad ${siteConfig.gradYear}`,
+    pending: true,
+  },
 ];
 
 export function About() {
@@ -70,11 +74,14 @@ export function About() {
               loves to work with. See README.md for editing instructions.
             */}
             <p>
-              Denver Frahm is a NASM Certified Personal Trainer specializing
-              in strength &amp; conditioning, built on a foundation of KSP
-              Strength &amp; Conditioning training. He works with clients of
-              every level — from people just starting their fitness journey
-              to athletes chasing a specific performance goal.
+              Denver Frahm is a NASM Certified Personal Trainer currently
+              finishing a {siteConfig.school} degree at {siteConfig.university}.
+              Fitness isn&apos;t a side interest for him — it&apos;s what he
+              spends his own time on, from training to dialing in his own
+              nutrition, and that same standard carries over into how he
+              coaches. He works with clients of every level — from people
+              just starting their fitness journey to athletes chasing a
+              specific performance goal.
             </p>
             <p>
               His approach is simple: build real strength, move well, and

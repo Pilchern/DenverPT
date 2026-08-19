@@ -1,13 +1,17 @@
 import { CheckIcon, DumbbellIcon, LaptopIcon, TargetIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
-// Rates aren't set in the codebase yet, so packages point to a free consult
-// instead of showing invented numbers. Once Denver has real rates, add a
-// `price`/`unit` pair back in and swap the CTA copy. See README.md.
+// Starting rates for a new independent trainer in a smaller Midwest market —
+// not a placeholder, but a deliberate starting point, priced to build a
+// client base rather than match big-city/established-trainer rates. Easy to
+// bump once Denver has a full roster and can raise prices with demand.
+// Just change `price`/`unit` here — nothing else needs to change.
 const packages = [
   {
     name: "1-on-1 Training",
     icon: DumbbellIcon,
+    price: "$55",
+    unit: "/ session",
     description: "In-person training tailored to your goals.",
     features: [
       "Custom program design",
@@ -20,6 +24,8 @@ const packages = [
   {
     name: "Online Coaching",
     icon: LaptopIcon,
+    price: "$150",
+    unit: "/ month",
     description: "Full programming and support, from anywhere.",
     features: [
       "Custom monthly training plan",
@@ -32,6 +38,8 @@ const packages = [
   {
     name: "Free Consult",
     icon: TargetIcon,
+    price: "Free",
+    unit: "",
     description: "A quick call to talk goals and figure out the right fit.",
     features: [
       "Goal & lifestyle assessment",
@@ -55,9 +63,7 @@ export function Services() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-slate">
             Pick the format that fits your life. Every package starts with a
-            free consult, where we&apos;ll talk through your goals and
-            budget so you know exactly what it costs before committing to
-            anything.
+            free consult so we can build the right plan for you.
           </p>
         </Reveal>
 
@@ -82,6 +88,12 @@ export function Services() {
                 <h3 className="font-heading mt-4 text-xl font-semibold text-cream">
                   {pkg.name}
                 </h3>
+                <p className="mt-3 flex items-baseline gap-1">
+                  <span className="font-heading text-3xl font-bold text-gold">
+                    {pkg.price}
+                  </span>
+                  <span className="text-sm text-slate">{pkg.unit}</span>
+                </p>
                 <p className="mt-3 text-sm text-slate">{pkg.description}</p>
                 <ul className="mt-6 space-y-3">
                   {pkg.features.map((f) => (
@@ -102,7 +114,7 @@ export function Services() {
                       : "border border-gold/40 text-gold hover:bg-gold hover:text-navy"
                   }`}
                 >
-                  {pkg.name === "Free Consult" ? "BOOK FREE CONSULT" : "GET PRICING"}
+                  {pkg.name === "Free Consult" ? "BOOK FREE CONSULT" : "GET STARTED"}
                 </a>
               </div>
             </Reveal>
