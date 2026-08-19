@@ -3,7 +3,10 @@
 export const siteUrl = "https://denver-frahm-training.vercel.app";
 
 export const siteConfig = {
-  name: "Denver Frahm",
+  // Business/brand name — matches his Instagram (@DenverSkyco) and My PT
+  // Hub page rather than his legal name (Denver Frahm).
+  name: "Denver Sky",
+  initials: "DS",
   credential: "NASM-CPT",
   tagline: "Certified Personal Trainer",
   focus: "Strength & Conditioning",

@@ -14,9 +14,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const title = "Personal Trainer in Kenosha & Trevor, WI | Denver Frahm";
-const description =
-  "NASM Certified Personal Trainer offering 1-on-1 training in Kenosha & Trevor, WI and online coaching nationwide. Book a free consult with Denver Frahm.";
+const title = `Personal Trainer in Kenosha & Trevor, WI | ${siteConfig.name}`;
+const description = `NASM Certified Personal Trainer offering 1-on-1 training in Kenosha & Trevor, WI and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -11,7 +11,7 @@ export function Footer() {
           <Logo size="sm" />
           <div>
             <p className="font-heading text-sm font-semibold tracking-wide-plus text-cream">
-              DENVER FRAHM
+              {siteConfig.name.toUpperCase()}
             </p>
             <p className="text-xs text-slate">
               {siteConfig.credential} &middot; {siteConfig.school}
@@ -19,7 +19,7 @@ export function Footer() {
           </div>
         </div>
         <p className="text-xs text-slate">
-          &copy; {year} Denver Frahm Training. All rights reserved.
+          &copy; {year} {siteConfig.name} Training. All rights reserved.
         </p>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { CloseIcon, MenuIcon } from "./icons";
+import { siteConfig } from "@/lib/site-config";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -22,7 +23,7 @@ export function Header() {
         <Link href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Logo size="sm" />
           <span className="font-heading text-sm font-semibold tracking-wide-plus text-cream">
-            DENVER FRAHM
+            {siteConfig.name.toUpperCase()}
           </span>
         </Link>
 

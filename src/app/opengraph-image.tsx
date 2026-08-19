@@ -33,7 +33,7 @@ export default function OpengraphImage() {
           }}
         >
           <span style={{ fontSize: 42, fontWeight: 700, color: "#f3ede2" }}>
-            DF
+            {siteConfig.initials}
           </span>
         </div>
         <div
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Denver Frahm
+          {siteConfig.name}
         </div>
         <div style={{ fontSize: 32, color: "#f3ede2", marginTop: 16 }}>
           1-on-1 Training · Online Coaching

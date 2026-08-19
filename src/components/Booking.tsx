@@ -82,7 +82,7 @@ export function Booking() {
         ) : hasCalendly ? (
           <iframe
             src={siteConfig.calendlyUrl}
-            title="Book a session with Denver Frahm"
+            title={`Book a session with ${siteConfig.name}`}
             className="h-[700px] w-full rounded-sm border border-gold/25"
             loading="lazy"
           />

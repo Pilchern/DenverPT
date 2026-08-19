@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/lib/site-config";
 
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
@@ -26,7 +27,7 @@ export default function Icon() {
             letterSpacing: "-1px",
           }}
         >
-          DF
+          {siteConfig.initials}
         </span>
       </div>
     ),

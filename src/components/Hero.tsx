@@ -34,7 +34,7 @@ export function Hero() {
 
       <Reveal delay={100} className="relative">
         <h1 className="font-heading text-glow mt-8 text-5xl font-bold uppercase tracking-wide text-cream sm:text-7xl lg:text-8xl">
-          Denver Frahm
+          {siteConfig.name}
         </h1>
       </Reveal>
 

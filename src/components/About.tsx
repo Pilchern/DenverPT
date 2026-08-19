@@ -74,7 +74,7 @@ export function About() {
               loves to work with. See README.md for editing instructions.
             */}
             <p>
-              Denver Frahm is a NASM Certified Personal Trainer currently
+              {siteConfig.name} is a NASM Certified Personal Trainer currently
               finishing a {siteConfig.school} degree at {siteConfig.university}.
               Fitness isn&apos;t a side interest for him — it&apos;s what he
               spends his own time on, from training to dialing in his own
