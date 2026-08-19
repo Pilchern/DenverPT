@@ -4,9 +4,9 @@ import { Reveal } from "./Reveal";
 
 function ContactRow({ compact = false }: { compact?: boolean }) {
   const size = compact ? "px-5 py-2.5 text-xs" : "px-6 py-3 text-sm";
-  // When compact, this is a secondary option below a primary gold CTA
-  // (My PT Hub), so every button here stays outlined -- only one gold
-  // button should be on screen at a time.
+  // When compact, this sits below a primary gold CTA (My PT Hub), so every
+  // button here stays outlined -- only one gold button should be on screen
+  // at a time.
   const callClassName = compact
     ? `font-heading inline-flex items-center gap-2 rounded-sm border border-cream/30 ${size} font-semibold tracking-wide-plus text-cream transition-colors hover:border-gold hover:text-gold`
     : `font-heading inline-flex items-center gap-2 rounded-sm bg-gold ${size} font-semibold tracking-wide-plus text-navy transition-transform hover:scale-[1.03]`;
@@ -60,8 +60,8 @@ export function Booking() {
         {hasMyPtHub ? (
           <div className="rounded-sm border border-gold/25 bg-navy px-6 py-12 text-center">
             <p className="text-cream/90">
-              Book straight through Denver&apos;s client portal — pick a
-              time and get set up in one step.
+              Get started through Denver&apos;s My PT Hub page, or just
+              reach out directly — either way works.
             </p>
             <a
               href={siteConfig.myPtHubUrl}
@@ -69,7 +69,7 @@ export function Booking() {
               rel="noopener noreferrer"
               className="font-heading mt-8 inline-flex items-center gap-2 rounded-sm bg-gold px-8 py-3 text-sm font-semibold tracking-wide-plus text-navy transition-transform hover:scale-[1.03]"
             >
-              BOOK ON MY PT HUB
+              GO TO MY PT HUB
               <ExternalLinkIcon className="h-4 w-4" />
             </a>
             <p className="mt-8 text-xs uppercase tracking-wide-plus text-slate">
@@ -89,9 +89,8 @@ export function Booking() {
         ) : (
           <div className="rounded-sm border border-gold/25 bg-navy px-6 py-12 text-center">
             <p className="text-cream/90">
-              Online booking is coming soon. In the meantime, reach out
-              directly and Denver will get back to you to schedule your free
-              consult.
+              Reach out directly to get started — Denver will get back to
+              you to lock in your free consult and get you set up.
             </p>
             <p className="mt-1 text-sm text-slate">{siteConfig.phone}</p>
             <div className="mt-6">

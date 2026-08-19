@@ -28,15 +28,14 @@ export const siteConfig = {
   // Optional: add a public contact email here once Denver has one he wants
   // listed. Leave blank to hide the email link.
   email: "",
-  // Denver's preferred platform — set this to his My PT Hub page URL (e.g.
-  // https://denverfrahm.mypthub.net) once he has an account. My PT Hub
-  // doesn't support an embedded calendar, only a link to their hosted page,
-  // so the Booking section shows a button rather than an iframe. Takes
-  // priority over Calendly below if both are set. See README.md.
-  myPtHubUrl: process.env.NEXT_PUBLIC_MYPTHUB_URL ?? "",
-  // Fallback option if Denver ever wants an embedded calendar instead —
-  // create a free Calendly/Cal.com account and set this. Until either this
-  // or myPtHubUrl above is set, Booking falls back to call/text/DM.
+  // Denver's client-management app — this is his real public page there.
+  // My PT Hub doesn't support an embedded calendar, only a link to their
+  // hosted page (confirmed via their own support docs), so Booking shows
+  // a button rather than an iframe.
+  myPtHubUrl: "https://skyfitness1.mypthub.net/p/235253",
+  // Fallback if Denver ever wants an embedded calendar instead of/alongside
+  // My PT Hub — create a free account at calendly.com or cal.com and set
+  // this. Only used if myPtHubUrl above is ever cleared out.
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL ?? "",
   // Free key from https://web3forms.com — lets the contact form send email
   // straight to Denver's inbox with no backend. See README.md.

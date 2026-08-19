@@ -10,9 +10,11 @@ cards.
   Works," Testimonials, FAQ, Booking, and Contact — all on one scrolling
   page.
 - A booking section built around [My PT Hub](https://mypthub.net) (Denver's
-  preferred platform) — a button linking out to his My PT Hub page once it's
-  configured. Falls back to an embedded Calendly calendar if that's set
-  instead, and to "call/text/DM" if neither is configured.
+  preferred platform) — a button linking to his real My PT Hub page
+  (`src/lib/site-config.ts`), with call/text/DM as a secondary option below
+  it. Falls back to an embedded Calendly calendar if `myPtHubUrl` is ever
+  cleared and `NEXT_PUBLIC_CALENDLY_URL` is set instead, and to plain
+  call/text/DM if neither is configured.
 - A contact form that emails Denver directly via [Web3Forms](https://web3forms.com)
   (free, no backend server needed) — until it's configured it shows a
   fallback message and still displays his phone/Instagram.
@@ -38,31 +40,25 @@ automatically once entries get added to the `testimonials` array — please
 don't fill it with invented quotes, that's a real liability for a business
 site, not just a style issue.
 
-## Two things to set up before sending this to real clients
+## One thing left to set up before sending this to real clients
 
-Both are free (My PT Hub has a free trial, then paid plans) and take a few
-minutes. Without them the site still works — it just falls back to "call or
-text Denver" / "message not connected yet".
+Free, takes a few minutes. Without it the site still works — the contact
+form just shows a fallback message and points people to phone/Instagram
+instead.
 
-### 1. Live booking (My PT Hub)
-
-1. Sign up at [mypthub.net](https://mypthub.net) if Denver hasn't already —
-   this is the app he wants to use to manage clients, so it's worth setting
-   up regardless of the website.
-2. Find his public page URL, e.g. `https://denverfrahm.mypthub.net` (My PT
-   Hub's own support docs confirm this is a link/button integration, not an
-   embeddable calendar — see [their integration
-   article](https://support.mypthub.net/hc/en-us/articles/360003212558)).
-3. Set it as an environment variable named `NEXT_PUBLIC_MYPTHUB_URL` (see
-   [Environment variables](#environment-variables) below).
-
-Prefer an embedded calendar instead? Create a free account at
+My PT Hub is already wired up (`myPtHubUrl` in `src/lib/site-config.ts`
+points at Denver's real page). If that page URL ever changes, just update
+it there — no env var needed. My PT Hub's own docs confirm this is a
+link/button integration, not an embeddable calendar (see [their
+integration article](https://support.mypthub.net/hc/en-us/articles/360003212558)),
+which is why Booking shows a button rather than an iframe. Prefer an
+embedded calendar instead? Create a free account at
 [calendly.com](https://calendly.com) (or [cal.com](https://cal.com)), set up
-an event type, and set `NEXT_PUBLIC_CALENDLY_URL` to your booking page link
-instead — that's still supported as a fallback and takes over if
-`NEXT_PUBLIC_MYPTHUB_URL` isn't set.
+an event type, set `NEXT_PUBLIC_CALENDLY_URL` to your booking page link, and
+clear out `myPtHubUrl` — Calendly takes over automatically once My PT Hub's
+URL is empty.
 
-### 2. Contact form email delivery (Web3Forms)
+### Contact form email delivery (Web3Forms)
 
 1. Go to [web3forms.com](https://web3forms.com) and enter the email address
    where you want messages delivered — no account needed, it emails you an
@@ -77,7 +73,7 @@ Locally, copy `.env.example` to `.env.local` and fill in the values:
 cp .env.example .env.local
 ```
 
-On Vercel (recommended host, see below), add both under
+On Vercel (recommended host, see below), add it under
 **Project Settings → Environment Variables**, then redeploy.
 
 ## Editing content
