@@ -9,8 +9,10 @@ cards.
 - Hero, credibility stats, "Who I Train," About/Bio, Services, "How It
   Works," Testimonials, FAQ, Booking, and Contact — all on one scrolling
   page.
-- A booking section that embeds a Calendly (or Cal.com) calendar once it's
-  configured — until then it shows a "call/text/DM" fallback.
+- A booking section built around [My PT Hub](https://mypthub.net) (Denver's
+  preferred platform) — a button linking out to his My PT Hub page once it's
+  configured. Falls back to an embedded Calendly calendar if that's set
+  instead, and to "call/text/DM" if neither is configured.
 - A contact form that emails Denver directly via [Web3Forms](https://web3forms.com)
   (free, no backend server needed) — until it's configured it shows a
   fallback message and still displays his phone/Instagram.
@@ -38,17 +40,27 @@ site, not just a style issue.
 
 ## Two things to set up before sending this to real clients
 
-Both are free and take a few minutes. Without them the site still works —
-it just falls back to "call or text Denver" / "message not connected yet".
+Both are free (My PT Hub has a free trial, then paid plans) and take a few
+minutes. Without them the site still works — it just falls back to "call or
+text Denver" / "message not connected yet".
 
-### 1. Live booking calendar (Calendly)
+### 1. Live booking (My PT Hub)
 
-1. Create a free account at [calendly.com](https://calendly.com) (or
-   [cal.com](https://cal.com)).
-2. Set up an event type, e.g. "Free Consult" or "Training Session".
-3. Copy your booking page link, e.g. `https://calendly.com/denver-frahm/consult`.
-4. Set it as an environment variable named `NEXT_PUBLIC_CALENDLY_URL` (see
+1. Sign up at [mypthub.net](https://mypthub.net) if Denver hasn't already —
+   this is the app he wants to use to manage clients, so it's worth setting
+   up regardless of the website.
+2. Find his public page URL, e.g. `https://denverfrahm.mypthub.net` (My PT
+   Hub's own support docs confirm this is a link/button integration, not an
+   embeddable calendar — see [their integration
+   article](https://support.mypthub.net/hc/en-us/articles/360003212558)).
+3. Set it as an environment variable named `NEXT_PUBLIC_MYPTHUB_URL` (see
    [Environment variables](#environment-variables) below).
+
+Prefer an embedded calendar instead? Create a free account at
+[calendly.com](https://calendly.com) (or [cal.com](https://cal.com)), set up
+an event type, and set `NEXT_PUBLIC_CALENDLY_URL` to your booking page link
+instead — that's still supported as a fallback and takes over if
+`NEXT_PUBLIC_MYPTHUB_URL` isn't set.
 
 ### 2. Contact form email delivery (Web3Forms)
 
