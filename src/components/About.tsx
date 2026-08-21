@@ -1,18 +1,15 @@
 import { siteConfig } from "@/lib/site-config";
-import { DumbbellIcon } from "./icons";
+import { DumbbellIcon, SealBadgeIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
-const credentials = [
-  { label: siteConfig.credential, sub: "National Academy of Sports Medicine" },
+const pendingCredentials = [
   {
     label: siteConfig.nutritionCredential,
     sub: siteConfig.nutritionStatus,
-    pending: true,
   },
   {
     label: siteConfig.school,
     sub: `${siteConfig.university} · Grad ${siteConfig.gradYear}`,
-    pending: true,
   },
 ];
 
@@ -36,22 +33,31 @@ export function About() {
           </div>
 
           <div className="mt-8 space-y-4">
-            {credentials.map((c) => (
+            <div className="card-hover flex items-center gap-4 rounded-sm border border-gold bg-navy-light px-5 py-5 shadow-[0_0_30px_-16px_rgba(201,166,104,0.6)]">
+              <SealBadgeIcon className="h-11 w-11 shrink-0 text-gold" />
+              <div>
+                <p className="font-heading text-base font-bold tracking-wide-plus text-gold">
+                  {siteConfig.credential}
+                </p>
+                <p className="mt-0.5 text-sm text-slate">
+                  National Academy of Sports Medicine — Certified Personal
+                  Trainer
+                </p>
+              </div>
+            </div>
+
+            {pendingCredentials.map((c) => (
               <div
                 key={c.label}
-                className={`card-hover rounded-sm border bg-navy-light px-5 py-4 ${
-                  c.pending ? "border-gold/15 border-dashed" : "border-gold/30"
-                }`}
+                className="card-hover rounded-sm border border-gold/15 border-dashed bg-navy-light px-5 py-4"
               >
                 <div className="flex items-center justify-between gap-3">
                   <p className="font-heading text-sm font-semibold tracking-wide-plus text-gold">
                     {c.label.toUpperCase()}
                   </p>
-                  {c.pending && (
-                    <span className="font-heading shrink-0 rounded-full border border-gold/40 px-2 py-0.5 text-[10px] font-semibold tracking-wide-plus text-gold/80">
-                      SOON
-                    </span>
-                  )}
+                  <span className="font-heading shrink-0 rounded-full border border-gold/40 px-2 py-0.5 text-[10px] font-semibold tracking-wide-plus text-gold/80">
+                    SOON
+                  </span>
                 </div>
                 <p className="mt-1 text-sm text-slate">{c.sub}</p>
               </div>

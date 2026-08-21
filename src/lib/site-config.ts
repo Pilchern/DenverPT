@@ -3,10 +3,8 @@
 export const siteUrl = "https://denver-frahm-training.vercel.app";
 
 export const siteConfig = {
-  // Business/brand name — matches his Instagram (@DenverSkyco) and My PT
-  // Hub page rather than his legal name (Denver Frahm).
-  name: "Denver Sky",
-  initials: "DS",
+  name: "Denver Frahm",
+  initials: "DF",
   credential: "NASM-CPT",
   tagline: "Certified Personal Trainer",
   focus: "Strength & Conditioning",
@@ -17,7 +15,7 @@ export const siteConfig = {
   smsHref: "sms:+12623218806",
   instagramHandle: "@DenverSkyco",
   instagramUrl: "https://instagram.com/DenverSkyco",
-  location: "Kenosha & Trevor, WI",
+  location: "Kenosha, WI & Lake County, IL",
   // "KSP" on his business card is shorthand for this degree, not a program
   // name — he's still finishing it (see gradYear), not holding it yet.
   school: "B.S. Kinesiology & Sport Performance",

@@ -14,8 +14,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const title = `Personal Trainer in Kenosha & Trevor, WI | ${siteConfig.name}`;
-const description = `NASM Certified Personal Trainer offering 1-on-1 training in Kenosha & Trevor, WI and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
+const title = `Personal Trainer in Kenosha, WI & Lake County, IL | ${siteConfig.name}`;
+const description = `NASM Certified Personal Trainer offering 1-on-1 training in Kenosha, WI & Lake County, IL and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,7 +40,7 @@ const professionalServiceSchema = {
   telephone: siteConfig.phoneHref.replace("tel:", ""),
   areaServed: [
     { "@type": "City", name: "Kenosha, WI" },
-    { "@type": "City", name: "Trevor, WI" },
+    { "@type": "AdministrativeArea", name: "Lake County, IL" },
   ],
   sameAs: [siteConfig.instagramUrl],
   founder: {
