@@ -16,6 +16,35 @@ export function DumbbellIcon({ className = "" }: { className?: string }) {
   );
 }
 
+export function SealBadgeIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 48 56"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M15 33.5 8 50l8.5-3 3.5 6.5L24 42l4 11.5 3.5-6.5 8.5 3-7-16.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <circle cx="24" cy="20" r="17" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="24" cy="20" r="12.5" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+      <path
+        d="M17.5 20.5 22 25l8.5-10"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function ExternalLinkIcon({ className = "" }: { className?: string }) {
   return (
     <svg

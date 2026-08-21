@@ -67,7 +67,30 @@ export function Services() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal delay={80}>
+          <div className="card-hover mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 rounded-sm border border-gold bg-navy px-6 py-6 shadow-[0_0_40px_-20px_rgba(201,166,104,0.5)] sm:flex-row sm:justify-between sm:text-left">
+            <div>
+              <span className="font-heading rounded-full bg-gold px-3 py-1 text-xs font-semibold tracking-wide-plus text-navy">
+                NEW CLIENT OFFER
+              </span>
+              <p className="font-heading mt-3 text-xl font-bold text-cream">
+                4 Sessions for $180
+              </p>
+              <p className="mt-1 text-sm text-slate">
+                A no-pressure way to try 1-on-1 training and see if it&apos;s
+                the right fit.
+              </p>
+            </div>
+            <a
+              href="#booking"
+              className="font-heading shrink-0 rounded-sm bg-gold px-6 py-3 text-sm font-semibold tracking-wide-plus text-navy transition-transform hover:scale-[1.03]"
+            >
+              CLAIM THIS DEAL
+            </a>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={i * 100} className="h-full">
               <div

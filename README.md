@@ -1,8 +1,8 @@
-# Denver Sky Training — Website
+# Denver Frahm Training — Website
 
-A one-page site for Denver Sky (business name — legal name Denver Frahm),
-NASM Certified Personal Trainer, built with Next.js + Tailwind CSS. Matches
-the navy/gold branding from his business cards.
+A one-page site for Denver Frahm, NASM Certified Personal Trainer, built with
+Next.js + Tailwind CSS. Matches the navy/gold branding from his business
+cards.
 
 ## What's on the site
 
@@ -19,7 +19,7 @@ the navy/gold branding from his business cards.
   (free, no backend server needed) — until it's configured it shows a
   fallback message and still displays his phone/Instagram.
 - Local SEO basics: title/description built around "Personal Trainer in
-  Kenosha & Trevor, WI," a `robots.txt` + sitemap, a branded favicon and
+  Kenosha, WI & Lake County, IL," a `robots.txt` + sitemap, a branded favicon and
   Open Graph image generated at build time, and JSON-LD structured data
   (ProfessionalService + FAQPage) so search engines understand the business.
 
@@ -117,7 +117,7 @@ Next.js, free for a site like this):
 2. Go to [vercel.com/new](https://vercel.com/new), import the repo.
 3. Add the environment variables from above.
 4. Deploy — Vercel gives you a live URL immediately, and you can attach a
-   custom domain later (e.g. `denverskytraining.com`).
+   custom domain later (e.g. `denverfrahmtraining.com`).
 
 ## Tech stack
 
