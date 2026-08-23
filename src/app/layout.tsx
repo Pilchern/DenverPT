@@ -14,8 +14,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const title = `Personal Trainer in Kenosha & Trevor, WI | ${siteConfig.name}`;
-const description = `NASM Certified Personal Trainer offering 1-on-1 training in Kenosha & Trevor, WI and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
+// Uses the abbreviated area so the title stays under ~60 characters in
+// search results; the description spells the region out in full.
+const title = `Personal Trainer in ${siteConfig.locationShort} | ${siteConfig.name}`;
+const description = `NASM Certified Personal Trainer offering 1-on-1 training across southeast Wisconsin & northeast Illinois, and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +40,12 @@ const professionalServiceSchema = {
   name: `${siteConfig.name} Training`,
   url: siteUrl,
   telephone: siteConfig.phoneHref.replace("tel:", ""),
+  // The two regions are the actual service area; Kenosha and Trevor stay
+  // listed as specific anchors inside it, since that's his home base and
+  // city-level entries are what local search matches on.
   areaServed: [
+    { "@type": "AdministrativeArea", name: "Southeast Wisconsin" },
+    { "@type": "AdministrativeArea", name: "Northeast Illinois" },
     { "@type": "City", name: "Kenosha, WI" },
     { "@type": "City", name: "Trevor, WI" },
   ],

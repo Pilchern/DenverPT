@@ -86,7 +86,7 @@ export function About() {
             <p>
               His approach is simple: build real strength, move well, and
               stay consistent. Every program is tailored to the individual,
-              whether you&apos;re training in person around{" "}
+              whether you&apos;re training in person across{" "}
               {siteConfig.location} or working together online from
               anywhere. He&apos;s also finishing his {siteConfig.nutritionCredential}{" "}
               certification, so nutrition coaching is coming soon alongside

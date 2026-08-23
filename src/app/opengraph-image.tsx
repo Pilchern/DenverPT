@@ -62,7 +62,7 @@ export default function OpengraphImage() {
           1-on-1 Training · Online Coaching
         </div>
         <div style={{ fontSize: 26, color: "#8493a8", marginTop: 12 }}>
-          {siteConfig.location}
+          {siteConfig.locationShort}
         </div>
       </div>
     ),

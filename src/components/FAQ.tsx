@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     question: "Do you train in person or online?",
-    answer: `Both. In-person training is available around ${siteConfig.location}, and online coaching works from anywhere for people outside that area or who prefer a self-directed schedule.`,
+    answer: `Both. In-person training is available across ${siteConfig.location}, and online coaching works from anywhere for people outside that area or who prefer a self-directed schedule.`,
   },
   {
     question: "How much does it cost?",

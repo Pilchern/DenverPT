@@ -17,7 +17,12 @@ export const siteConfig = {
   smsHref: "sms:+12623218806",
   instagramHandle: "@DenverSkyco",
   instagramUrl: "https://instagram.com/DenverSkyco",
-  location: "Kenosha & Trevor, WI",
+  // In-person service area, kept broad on purpose: southeast Wisconsin down
+  // through northeast Illinois, rather than a short list of home-base cities.
+  location: "Southeast Wisconsin & Northeast Illinois",
+  // Same area abbreviated, for spots where the full string wraps badly — the
+  // stats strip and the Open Graph image. Keep the two in sync.
+  locationShort: "SE Wisconsin & NE Illinois",
   // "KSP" on his business card is shorthand for this degree, not a program
   // name — he's still finishing it (see gradYear), not holding it yet.
   school: "B.S. Kinesiology & Sport Performance",
