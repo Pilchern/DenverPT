@@ -19,7 +19,7 @@ the navy/gold branding from his business cards.
   (free, no backend server needed) — until it's configured it shows a
   fallback message and still displays his phone/Instagram.
 - Local SEO basics: title/description built around "Personal Trainer in
-  Kenosha & Trevor, WI," a `robots.txt` + sitemap, a branded favicon and
+  SE Wisconsin & NE Illinois," a `robots.txt` + sitemap, a branded favicon and
   Open Graph image generated at build time, and JSON-LD structured data
   (ProfessionalService + FAQPage) so search engines understand the business.
 

@@ -20,7 +20,7 @@ const stats = [
   },
   {
     icon: MapPinIcon,
-    label: siteConfig.location,
+    label: siteConfig.locationShort,
     sub: "In-person service area",
   },
 ];
