@@ -1,12 +1,21 @@
-// Update if a custom domain gets attached in Vercel — used for canonical
-// URLs, Open Graph tags, and structured data.
-export const siteUrl = "https://denver-frahm-training.vercel.app";
+// The site's real home. Feeds the canonical URL, Open Graph tags, the
+// sitemap, robots.txt, and structured data — so this must match the domain
+// people actually land on, or search engines index the wrong host.
+// The .vercel.app address still resolves and now redirects here.
+export const siteUrl = "https://skycofitness.com";
 
 export const siteConfig = {
-  // Business/brand name — matches his Instagram (@DenverSkyco) and My PT
-  // Hub page rather than his legal name (Denver Frahm).
-  name: "Denver Sky",
-  initials: "DS",
+  // The business, and the trainer, are deliberately two different names now:
+  // Denver is building a brand rather than trading purely on his own name.
+  // `businessName` leads wherever the company is meant (logo wordmark, page
+  // title, footer, ProfessionalService schema); `trainerName` is used
+  // wherever a person is meant (hero, About, founder in structured data).
+  // Both differ from his legal name, Denver Frahm — the brand matches the
+  // domain (skycofitness.com), and "Denver Sky" matches his Instagram.
+  businessName: "Sky Co Fitness",
+  trainerName: "Denver Sky",
+  // Monogram for the logo mark and the favicon — the business initials.
+  initials: "SCF",
   credential: "NASM-CPT",
   tagline: "Certified Personal Trainer",
   focus: "Strength & Conditioning",

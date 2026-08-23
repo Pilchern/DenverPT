@@ -16,8 +16,8 @@ const inter = Inter({
 
 // Uses the abbreviated area so the title stays under ~60 characters in
 // search results; the description spells the region out in full.
-const title = `Personal Trainer in ${siteConfig.locationShort} | ${siteConfig.name}`;
-const description = `NASM Certified Personal Trainer offering 1-on-1 training across southeast Wisconsin & northeast Illinois, and online coaching nationwide. Book a free consult with ${siteConfig.name}.`;
+const title = `Personal Trainer in ${siteConfig.locationShort} | ${siteConfig.businessName}`;
+const description = `NASM Certified Personal Trainer offering 1-on-1 training across southeast Wisconsin & northeast Illinois, and online coaching nationwide. Book a free consult with ${siteConfig.trainerName}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: `${siteConfig.name} Training`,
+  name: siteConfig.businessName,
   url: siteUrl,
   telephone: siteConfig.phoneHref.replace("tel:", ""),
   // The two regions are the actual service area; Kenosha and Trevor stay
@@ -52,7 +52,7 @@ const professionalServiceSchema = {
   sameAs: [siteConfig.instagramUrl],
   founder: {
     "@type": "Person",
-    name: siteConfig.name,
+    name: siteConfig.trainerName,
     jobTitle: siteConfig.tagline,
     hasCredential: "NASM Certified Personal Trainer (NASM-CPT)",
   },

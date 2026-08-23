@@ -34,8 +34,14 @@ export function Hero() {
 
       <Reveal delay={100} className="relative">
         <h1 className="font-heading text-glow mt-8 text-5xl font-bold uppercase tracking-wide text-cream sm:text-7xl lg:text-8xl">
-          {siteConfig.name}
+          {siteConfig.businessName}
         </h1>
+      </Reveal>
+
+      <Reveal delay={150} className="relative">
+        <p className="font-heading mt-4 text-base tracking-wide-plus text-gold sm:text-xl">
+          with {siteConfig.trainerName}, {siteConfig.credential}
+        </p>
       </Reveal>
 
       <Reveal delay={200} className="relative">
