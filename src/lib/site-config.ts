@@ -1,6 +1,8 @@
-// Update if a custom domain gets attached in Vercel — used for canonical
-// URLs, Open Graph tags, and structured data.
-export const siteUrl = "https://denver-frahm-training.vercel.app";
+// The site's real home. Feeds the canonical URL, Open Graph tags, the
+// sitemap, robots.txt, and structured data — so this must match the domain
+// people actually land on, or search engines index the wrong host.
+// The .vercel.app address still resolves and now redirects here.
+export const siteUrl = "https://skycofitness.com";
 
 export const siteConfig = {
   // The business, and the trainer, are deliberately two different names now:
