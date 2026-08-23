@@ -1,17 +1,14 @@
 import { CheckIcon, DumbbellIcon, LaptopIcon, TargetIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
-// Starting rates for a new independent trainer in a smaller Midwest market —
-// not a placeholder, but a deliberate starting point, priced to build a
-// client base rather than match big-city/established-trainer rates. Easy to
-// bump once Denver has a full roster and can raise prices with demand.
-// Just change `price`/`unit` here — nothing else needs to change.
+// No rates listed anywhere on the site — pricing is quoted per client after
+// the free consult, so nobody sees a number before Denver has talked to them.
+// If that ever changes, add `price`/`unit` fields back here and render them in
+// the card below; this is the only place packages are defined.
 const packages = [
   {
     name: "1-on-1 Training",
     icon: DumbbellIcon,
-    price: "$55",
-    unit: "/ session",
     description: "In-person training tailored to your goals.",
     features: [
       "Custom program design",
@@ -24,8 +21,6 @@ const packages = [
   {
     name: "Online Coaching",
     icon: LaptopIcon,
-    price: "$150",
-    unit: "/ month",
     description: "Full programming and support, from anywhere.",
     features: [
       "Custom monthly training plan",
@@ -38,8 +33,6 @@ const packages = [
   {
     name: "Free Consult",
     icon: TargetIcon,
-    price: "Free",
-    unit: "",
     description: "A quick call to talk goals and figure out the right fit.",
     features: [
       "Goal & lifestyle assessment",
@@ -59,15 +52,16 @@ export function Services() {
             SERVICES
           </p>
           <h2 className="font-heading mt-3 text-3xl font-bold uppercase text-cream sm:text-4xl">
-            Training Packages
+            Training Options
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-slate">
-            Pick the format that fits your life. Every package starts with a
-            free consult so we can build the right plan for you.
+            Pick the format that fits your life. Every plan starts with a free
+            consult, and pricing is built around your goals, schedule, and how
+            often we train.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={i * 100} className="h-full">
               <div
@@ -88,12 +82,6 @@ export function Services() {
                 <h3 className="font-heading mt-4 text-xl font-semibold text-cream">
                   {pkg.name}
                 </h3>
-                <p className="mt-3 flex items-baseline gap-1">
-                  <span className="font-heading text-3xl font-bold text-gold">
-                    {pkg.price}
-                  </span>
-                  <span className="text-sm text-slate">{pkg.unit}</span>
-                </p>
                 <p className="mt-3 text-sm text-slate">{pkg.description}</p>
                 <ul className="mt-6 space-y-3">
                   {pkg.features.map((f) => (

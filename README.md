@@ -25,12 +25,12 @@ the navy/gold branding from his business cards.
 
 ## A rule this codebase follows: never invent facts
 
-Services shows **$55/session** and **$150/month** — deliberate starting
-rates picked to match what a new independent trainer in a smaller Midwest
-market typically charges, not numbers Denver confirmed himself. They're a
-reasonable place to start, not gospel — he should raise them once he has a
-full roster, or adjust now if they're off. Change them in
-`src/components/Services.tsx` (just the `price`/`unit` fields).
+No prices appear anywhere on the site, on purpose. Denver quotes every
+client individually after the free consult, so the site describes what each
+option includes and leaves the number to that conversation. If he ever wants
+listed rates, add `price`/`unit` fields to the `packages` array in
+`src/components/Services.tsx` and render them in the card — but they should
+be numbers he confirmed, not estimates.
 
 Testimonials is a different situation: the array is empty on purpose (see
 `src/components/Testimonials.tsx`) and shows an honest "just getting
@@ -84,7 +84,7 @@ Everything editor-friendly lives in a few files:
 | --- | --- |
 | Phone, Instagram, location, credentials, site URL | `src/lib/site-config.ts` |
 | Bio / about text | `src/components/About.tsx` |
-| Package details (see note above on pricing) | `src/components/Services.tsx` |
+| Training options (see note above on pricing) | `src/components/Services.tsx` |
 | Testimonials (empty by design — see note above) | `src/components/Testimonials.tsx` |
 | Who Denver trains | `src/components/WhoITrain.tsx` |
 | The 3-step process | `src/components/HowItWorks.tsx` |
