@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "Starting rates are listed above under Training Packages. The free consult is where we'll figure out exactly what you need and confirm final pricing before you commit to anything.",
+      "Pricing is put together individually rather than off a set price list, because what you need depends on your goals, how often we train, and whether you're in person or online. The free consult is where we'll work that out and give you a straight number before you commit to anything.",
   },
   {
     question: "I have an old injury or physical limitation. Can you work around it?",
