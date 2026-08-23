@@ -1,8 +1,16 @@
-# Denver Sky Training — Website
+# Sky Co Fitness — Website
 
-A one-page site for Denver Sky (business name — legal name Denver Frahm),
-NASM Certified Personal Trainer, built with Next.js + Tailwind CSS. Matches
-the navy/gold branding from his business cards.
+A one-page site for Sky Co Fitness, the training business run by Denver Sky
+(legal name Denver Frahm), NASM Certified Personal Trainer. Built with
+Next.js + Tailwind CSS, matching the navy/gold branding from his business
+cards.
+
+The business and the trainer are two separate names in `site-config.ts`, on
+purpose — `businessName` ("Sky Co Fitness") is the brand and leads wherever
+the company is meant: logo wordmark, page title, footer, and the
+ProfessionalService schema. `trainerName` ("Denver Sky") is used wherever a
+person is meant: the hero line, the About bio, and the founder entry in
+structured data. Change either in one place and it propagates.
 
 ## What's on the site
 
@@ -82,7 +90,7 @@ Everything editor-friendly lives in a few files:
 
 | What to change | File |
 | --- | --- |
-| Phone, Instagram, location, credentials, site URL | `src/lib/site-config.ts` |
+| Business name, trainer name, initials, phone, Instagram, location, credentials, site URL | `src/lib/site-config.ts` |
 | Bio / about text | `src/components/About.tsx` |
 | Training options (see note above on pricing) | `src/components/Services.tsx` |
 | Testimonials (empty by design — see note above) | `src/components/Testimonials.tsx` |

@@ -32,7 +32,7 @@ export default function OpengraphImage() {
             marginBottom: 32,
           }}
         >
-          <span style={{ fontSize: 42, fontWeight: 700, color: "#f3ede2" }}>
+          <span style={{ fontSize: 34, fontWeight: 700, color: "#f3ede2" }}>
             {siteConfig.initials}
           </span>
         </div>
@@ -56,7 +56,17 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          {siteConfig.name}
+          {siteConfig.businessName}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 30,
+            color: "#c9a668",
+            marginTop: 14,
+          }}
+        >
+          with {siteConfig.trainerName}, {siteConfig.credential}
         </div>
         <div style={{ fontSize: 32, color: "#f3ede2", marginTop: 16 }}>
           1-on-1 Training · Online Coaching

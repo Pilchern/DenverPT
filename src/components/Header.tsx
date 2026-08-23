@@ -23,7 +23,7 @@ export function Header() {
         <Link href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Logo size="sm" />
           <span className="font-heading text-sm font-semibold tracking-wide-plus text-cream">
-            {siteConfig.name.toUpperCase()}
+            {siteConfig.businessName.toUpperCase()}
           </span>
         </Link>
 
